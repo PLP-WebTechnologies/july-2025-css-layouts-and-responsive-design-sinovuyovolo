@@ -1,0 +1,141 @@
+/* Color Palette */
+/* Lush Merlot: #730000 */
+/* Satin Gold: #C5A880 */
+
+/* Basic Styles and Box-Sizing */
+body {
+    font-family: 'Georgia', serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* Flexbox Layout for Header & Navigation */
+.page-header {
+    background: #730000; /* Lush Merlot */
+    color: #fff;
+    padding: 1rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+h1 {
+    color: #C5A880; /* Satin Gold */
+    font-size: 2.5rem;
+}
+
+.main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.main-nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    background: #C5A880; /* Satin Gold */
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.main-nav a:hover {
+    background: #a88a66; /* A slightly darker gold for hover effect */
+}
+
+/* Flexbox for the content cards */
+.card-container {
+    background:#fff;
+    border:1px solid #730000;
+    padding:1,5rem;
+    border-radius:8px;
+    flex: 1 1 250px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card {
+    background: #fff;
+    border: 1px solid #730000; /* Lush Merlot border */
+    padding: 1.5rem;
+    border-radius: 8px;
+    flex: 1 1 250px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+    color: #730000; /* Lush Merlot */
+}
+
+/* CSS Grid Layout for Main Content Area */
+.main-content-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "content"
+        "sidebar";
+    gap: 20px;
+    padding: 1rem;
+}
+
+.content-article {
+    grid-area: content;
+}
+
+.sidebar {
+    grid-area: sidebar;
+    background: #C5A880; /* Satin Gold */
+    padding: 1.5rem;
+    border-radius: 8px;
+    color: #730000; /* Lush Merlot text */
+}
+
+/* Responsive Media Queries (Mobile-First Approach) */
+
+/* Tablet View: Screens from 768px and up */
+@media (min-width: 768px) {
+    .page-header {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .main-content-grid {
+        grid-template-columns: 3fr 1fr;
+        grid-template-areas:
+            "content sidebar";
+    }
+}
+
+/* Desktop View: Screens from 1024px and up */
+@media (min-width: 1024px) {
+    .page-header {
+        padding: 1rem 4rem;
+    }
+
+    .main-content-grid {
+        max-width: 1200px;
+        margin: auto;
+        padding: 2rem;
+    }
+}
+
+/* Footer Style */
+.page-footer {
+    background: #730000; /* Lush Merlot */
+    color: #C5A880; /* Satin Gold text */
+    text-align: center;
+    padding: 1rem;
+    margin-top: 20px;
+}
